@@ -1,11 +1,11 @@
 {
     "name": "@mistericy/aws-typescript-helpers",
     "description": "A library of helpers for AWS services written in TypeScript",
-    "version": "0.1.0",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "version": "0.2.0",
+    "main": "dist/Index.js",
+    "types": "dist/Index.d.ts",
     "files": [
-        "/dist"
+        "dist/"
     ],
     "keywords": [
         "AWS",
@@ -38,7 +38,8 @@
     },
     "scripts": {
         "test": "jest",
-        "build": "tsc",
+        "build": "rm -rf dist/; mkdir -p dist && tsc",
+        "prepublishOnly": "npm run build",
         "prettier-format": "prettier 'src/**/*.ts' 'tests/**/*.ts' --write"
     }
 }
